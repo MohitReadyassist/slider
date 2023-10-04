@@ -1,0 +1,89 @@
+/* Styles for the slider container */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+  }
+  
+  /* Styles for the slider itself */
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    flex: 0 0 100%; /* Set width of non-active slides */
+    height: 300px; /* Adjust slide height as needed */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    transition: filter 0.5s ease-in-out; /* Transition for grayscale effect */
+    filter: grayscale(100%); /* Initial grayscale effect for non-active slides */
+  }
+  
+  .slide.active {
+    flex: 0 0 150%; /* Set width of active slide (wider) */
+    filter: grayscale(0%); /* Transition to color for active slide */
+  }
+  
+  /* Styles for navigation buttons */
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  /* Styles for bottom navigation buttons */
+  .bottom-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .slide-selector {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .slide-selector.active {
+    background-color: #007bff;
+  }
+  
+  /* Styles for mobile navigation buttons */
+  .mobile-nav-button {
+    display: none; /* Initially, hide the buttons for non-mobile view */
+  }
+  
+  /* Media query for mobile devices (adjust the breakpoint as needed) */
+  @media (max-width: 768px) {
+    .mobile-nav-button {
+      display: block; /* Display the buttons as block elements in mobile view */
+      margin: 0 10px; /* Add some spacing between the buttons */
+    }
+  }
+  

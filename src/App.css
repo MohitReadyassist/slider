@@ -1,6 +1,78 @@
 .App {
   text-align: center;
 }
+/* CustomSlider.css */
+
+/* Slider Container */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Individual Slide */
+.slide {
+  flex: 0 0 100%; 
+  transition: filter 0.5s ease, transform 0.5s ease;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Active Slide */
+.slide.active {
+  filter: grayscale(0%);
+}
+
+/* Inactive Slide */
+.slide.inactive {
+  filter: grayscale(100%);
+}
+
+/* Navigation Buttons */
+.navigation {
+  text-align: center;
+}
+
+button.prev,
+button.next {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .slider {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slide {
+    flex: 1;
+    width: 100%;
+  }
+}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +107,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.mobile-nav-button {
+  display: block; 
+}
+
+@media (max-width: 768px) {
+  .mobile-nav-button {
+    display: inline-block; 
+    margin: 0 10px; 
+  }
+}
+
+.slide-black-and-white {
+  filter: grayscale(100%);
+}
+
+.slide-color {
+  filter: grayscale(0%);
 }
